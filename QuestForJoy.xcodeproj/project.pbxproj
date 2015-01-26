@@ -8,11 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		E7F055A31A76A4C100459D21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F055A21A76A4C100459D21 /* AppDelegate.swift */; };
-		E7F055A51A76A4C100459D21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F055A41A76A4C100459D21 /* ViewController.swift */; };
 		E7F055A81A76A4C100459D21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7F055A61A76A4C100459D21 /* Main.storyboard */; };
 		E7F055AA1A76A4C100459D21 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7F055A91A76A4C100459D21 /* Images.xcassets */; };
 		E7F055AD1A76A4C100459D21 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7F055AB1A76A4C100459D21 /* LaunchScreen.xib */; };
 		E7F055B91A76A4C100459D21 /* QuestForJoyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F055B81A76A4C100459D21 /* QuestForJoyTests.swift */; };
+		E7F055C51A76A5EF00459D21 /* QuestForJoyTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F055C41A76A5EF00459D21 /* QuestForJoyTableViewController.swift */; };
+		E7F055C71A76ABA300459D21 /* QuestForJoyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F055C61A76ABA300459D21 /* QuestForJoyDetailViewController.swift */; };
+		E7F055D01A76AE7C00459D21 /* qfj-truth0.html in Resources */ = {isa = PBXBuildFile; fileRef = E7F055C81A76AE7C00459D21 /* qfj-truth0.html */; };
+		E7F055D11A76AE7C00459D21 /* qfj-truth1.html in Resources */ = {isa = PBXBuildFile; fileRef = E7F055C91A76AE7C00459D21 /* qfj-truth1.html */; };
+		E7F055D21A76AE7C00459D21 /* qfj-truth2.html in Resources */ = {isa = PBXBuildFile; fileRef = E7F055CA1A76AE7C00459D21 /* qfj-truth2.html */; };
+		E7F055D31A76AE7C00459D21 /* qfj-truth3.html in Resources */ = {isa = PBXBuildFile; fileRef = E7F055CB1A76AE7C00459D21 /* qfj-truth3.html */; };
+		E7F055D41A76AE7C00459D21 /* qfj-truth4.html in Resources */ = {isa = PBXBuildFile; fileRef = E7F055CC1A76AE7C00459D21 /* qfj-truth4.html */; };
+		E7F055D51A76AE7C00459D21 /* qfj-truth5.html in Resources */ = {isa = PBXBuildFile; fileRef = E7F055CD1A76AE7C00459D21 /* qfj-truth5.html */; };
+		E7F055D61A76AE7C00459D21 /* qfj-truth6.html in Resources */ = {isa = PBXBuildFile; fileRef = E7F055CE1A76AE7C00459D21 /* qfj-truth6.html */; };
+		E7F055D71A76AE7C00459D21 /* qfj-truth7.html in Resources */ = {isa = PBXBuildFile; fileRef = E7F055CF1A76AE7C00459D21 /* qfj-truth7.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,13 +38,22 @@
 		E7F0559D1A76A4C100459D21 /* QuestForJoy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuestForJoy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7F055A11A76A4C100459D21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7F055A21A76A4C100459D21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E7F055A41A76A4C100459D21 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E7F055A71A76A4C100459D21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E7F055A91A76A4C100459D21 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		E7F055AC1A76A4C100459D21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		E7F055B21A76A4C100459D21 /* QuestForJoyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QuestForJoyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7F055B71A76A4C100459D21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7F055B81A76A4C100459D21 /* QuestForJoyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestForJoyTests.swift; sourceTree = "<group>"; };
+		E7F055C41A76A5EF00459D21 /* QuestForJoyTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestForJoyTableViewController.swift; sourceTree = "<group>"; };
+		E7F055C61A76ABA300459D21 /* QuestForJoyDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestForJoyDetailViewController.swift; sourceTree = "<group>"; };
+		E7F055C81A76AE7C00459D21 /* qfj-truth0.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "qfj-truth0.html"; sourceTree = "<group>"; };
+		E7F055C91A76AE7C00459D21 /* qfj-truth1.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "qfj-truth1.html"; sourceTree = "<group>"; };
+		E7F055CA1A76AE7C00459D21 /* qfj-truth2.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "qfj-truth2.html"; sourceTree = "<group>"; };
+		E7F055CB1A76AE7C00459D21 /* qfj-truth3.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "qfj-truth3.html"; sourceTree = "<group>"; };
+		E7F055CC1A76AE7C00459D21 /* qfj-truth4.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "qfj-truth4.html"; sourceTree = "<group>"; };
+		E7F055CD1A76AE7C00459D21 /* qfj-truth5.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "qfj-truth5.html"; sourceTree = "<group>"; };
+		E7F055CE1A76AE7C00459D21 /* qfj-truth6.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "qfj-truth6.html"; sourceTree = "<group>"; };
+		E7F055CF1A76AE7C00459D21 /* qfj-truth7.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = "qfj-truth7.html"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,9 +95,11 @@
 		E7F0559F1A76A4C100459D21 /* QuestForJoy */ = {
 			isa = PBXGroup;
 			children = (
+				E7F055DA1A76C12600459D21 /* HTML Files */,
 				E7F055A21A76A4C100459D21 /* AppDelegate.swift */,
-				E7F055A41A76A4C100459D21 /* ViewController.swift */,
 				E7F055A61A76A4C100459D21 /* Main.storyboard */,
+				E7F055C41A76A5EF00459D21 /* QuestForJoyTableViewController.swift */,
+				E7F055C61A76ABA300459D21 /* QuestForJoyDetailViewController.swift */,
 				E7F055A91A76A4C100459D21 /* Images.xcassets */,
 				E7F055AB1A76A4C100459D21 /* LaunchScreen.xib */,
 				E7F055A01A76A4C100459D21 /* Supporting Files */,
@@ -110,6 +130,21 @@
 				E7F055B71A76A4C100459D21 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E7F055DA1A76C12600459D21 /* HTML Files */ = {
+			isa = PBXGroup;
+			children = (
+				E7F055C81A76AE7C00459D21 /* qfj-truth0.html */,
+				E7F055C91A76AE7C00459D21 /* qfj-truth1.html */,
+				E7F055CA1A76AE7C00459D21 /* qfj-truth2.html */,
+				E7F055CB1A76AE7C00459D21 /* qfj-truth3.html */,
+				E7F055CC1A76AE7C00459D21 /* qfj-truth4.html */,
+				E7F055CD1A76AE7C00459D21 /* qfj-truth5.html */,
+				E7F055CE1A76AE7C00459D21 /* qfj-truth6.html */,
+				E7F055CF1A76AE7C00459D21 /* qfj-truth7.html */,
+			);
+			name = "HTML Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,8 +228,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				E7F055A81A76A4C100459D21 /* Main.storyboard in Resources */,
+				E7F055D51A76AE7C00459D21 /* qfj-truth5.html in Resources */,
+				E7F055D21A76AE7C00459D21 /* qfj-truth2.html in Resources */,
+				E7F055D71A76AE7C00459D21 /* qfj-truth7.html in Resources */,
 				E7F055AD1A76A4C100459D21 /* LaunchScreen.xib in Resources */,
+				E7F055D41A76AE7C00459D21 /* qfj-truth4.html in Resources */,
+				E7F055D11A76AE7C00459D21 /* qfj-truth1.html in Resources */,
 				E7F055AA1A76A4C100459D21 /* Images.xcassets in Resources */,
+				E7F055D61A76AE7C00459D21 /* qfj-truth6.html in Resources */,
+				E7F055D01A76AE7C00459D21 /* qfj-truth0.html in Resources */,
+				E7F055D31A76AE7C00459D21 /* qfj-truth3.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,8 +255,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7F055A51A76A4C100459D21 /* ViewController.swift in Sources */,
 				E7F055A31A76A4C100459D21 /* AppDelegate.swift in Sources */,
+				E7F055C51A76A5EF00459D21 /* QuestForJoyTableViewController.swift in Sources */,
+				E7F055C71A76ABA300459D21 /* QuestForJoyDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
