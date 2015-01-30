@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E711F3B21A7934F900B68B29 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E711F3B11A7934F900B68B29 /* TextViewController.swift */; };
+		E711F3B51A7937F400B68B29 /* Quest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E711F3B31A7937F400B68B29 /* Quest.swift */; };
+		E711F3B61A7937F400B68B29 /* QuestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E711F3B41A7937F400B68B29 /* QuestData.swift */; };
 		E7F055A31A76A4C100459D21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F055A21A76A4C100459D21 /* AppDelegate.swift */; };
 		E7F055A81A76A4C100459D21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7F055A61A76A4C100459D21 /* Main.storyboard */; };
 		E7F055AA1A76A4C100459D21 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7F055A91A76A4C100459D21 /* Images.xcassets */; };
@@ -35,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E711F3B11A7934F900B68B29 /* TextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
+		E711F3B31A7937F400B68B29 /* Quest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quest.swift; sourceTree = "<group>"; };
+		E711F3B41A7937F400B68B29 /* QuestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestData.swift; sourceTree = "<group>"; };
 		E7F0559D1A76A4C100459D21 /* QuestForJoy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuestForJoy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7F055A11A76A4C100459D21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7F055A21A76A4C100459D21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +105,9 @@
 				E7F055A21A76A4C100459D21 /* AppDelegate.swift */,
 				E7F055A61A76A4C100459D21 /* Main.storyboard */,
 				E7F055C41A76A5EF00459D21 /* QuestForJoyTableViewController.swift */,
+				E711F3B11A7934F900B68B29 /* TextViewController.swift */,
+				E711F3B31A7937F400B68B29 /* Quest.swift */,
+				E711F3B41A7937F400B68B29 /* QuestData.swift */,
 				E7F055C61A76ABA300459D21 /* QuestForJoyDetailViewController.swift */,
 				E7F055A91A76A4C100459D21 /* Images.xcassets */,
 				E7F055AB1A76A4C100459D21 /* LaunchScreen.xib */,
@@ -196,6 +205,7 @@
 				TargetAttributes = {
 					E7F0559C1A76A4C100459D21 = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = SLWYW2X927;
 					};
 					E7F055B11A76A4C100459D21 = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -255,9 +265,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E711F3B61A7937F400B68B29 /* QuestData.swift in Sources */,
+				E711F3B51A7937F400B68B29 /* Quest.swift in Sources */,
 				E7F055A31A76A4C100459D21 /* AppDelegate.swift in Sources */,
 				E7F055C51A76A5EF00459D21 /* QuestForJoyTableViewController.swift in Sources */,
 				E7F055C71A76ABA300459D21 /* QuestForJoyDetailViewController.swift in Sources */,
+				E711F3B21A7934F900B68B29 /* TextViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,9 +395,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = QuestForJoy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -392,9 +410,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				INFOPLIST_FILE = QuestForJoy/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -451,6 +474,7 @@
 				E7F055BE1A76A4C100459D21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E7F055BF1A76A4C100459D21 /* Build configuration list for PBXNativeTarget "QuestForJoyTests" */ = {
 			isa = XCConfigurationList;
@@ -459,6 +483,7 @@
 				E7F055C11A76A4C100459D21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

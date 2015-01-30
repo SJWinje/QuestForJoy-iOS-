@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0B35D6ED-43A4-4480-B3DB-FC90407AD7E0</string>
+	<key>IDESourceControlProjectName</key>
+	<string>QuestForJoy</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>272F55E071FED8D683C1AB98F5FB1AE7B1878F66</key>
+		<string>https://github.com/SJWinje/QuestForJoy-iOS-.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>QuestForJoy.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>272F55E071FED8D683C1AB98F5FB1AE7B1878F66</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/SJWinje/QuestForJoy-iOS-.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>272F55E071FED8D683C1AB98F5FB1AE7B1878F66</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>272F55E071FED8D683C1AB98F5FB1AE7B1878F66</string>
+			<key>IDESourceControlWCCName</key>
+			<string>QuestForJoy</string>
+		</dict>
+	</array>
+</dict>
+</plist>

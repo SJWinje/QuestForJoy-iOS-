@@ -23,31 +23,46 @@ class QuestForJoyTableViewController: UITableViewController {
             
     override func viewDidLoad() {
         super.viewDidLoad()
+        NSNotificationCenter.defaultCenter().addObserver(self,
+            selector: "preferredContentSizeChanged:",
+            name: UIContentSizeCategoryDidChangeNotification,
+            object: nil)
 
         // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
 
         // Hide separators
         tableView.separatorColor = UIColor.whiteColor()
+        
         // Remove separators from empty table cells
         tableView.tableFooterView = UIView(frame:CGRectZero)
+        
+        // Settings to enable rows to adjust their height based on the text in each row
+        tableView.estimatedRowHeight = 66.0
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
 
+    override func viewWillAppear(animated: Bool) {
+    
+        // Reload the table so Accessibility Dynamic Type text size changes take effect immediately
+        self.tableView.reloadSections(NSIndexSet(indexesInRange: NSMakeRange(0, self.tableView.numberOfSections())), withRowAnimation: .None)
+    }
+
+    func preferredContentSizeChanged(notification: NSNotification) {
+
+        // Reload the table so Accessibility Dynamic Type text size changes take effect immediately
+        tableView.reloadData()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
-
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Potentially incomplete method implementation.
-        // Return the number of sections.
-        return 1
-    }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
@@ -63,6 +78,11 @@ class QuestForJoyTableViewController: UITableViewController {
         
         let truth = truths[indexPath.row]
         cell.textLabel?.text = truth
+        
+        // Dynamic Type was not applied to each cell of the table unless the following two lines are here
+        cell.textLabel?.numberOfLines = 0
+        cell.textLabel?.font = UIFont.preferredFontForTextStyle(UIFontTextStyleHeadline)
+
         cell.backgroundColor = UIColor.clearColor()
         return cell
     }
@@ -74,9 +94,9 @@ class QuestForJoyTableViewController: UITableViewController {
         // Get the new view controller using [segue destinationViewController].
         // Pass the selected object to the new view controller.
         if (segue.identifier == "showDetail") {
-            var svc = segue.destinationViewController as QuestForJoyDetailViewController;
+            var svc = segue.destinationViewController as TextViewController;
             
-            // Let the QuestForJoyDetailViewController know which row was selected
+            // Let the TextViewController know which row was selected
             let myIndexPath = self.tableView.indexPathForSelectedRow()
             svc.row = myIndexPath?.row
         }
