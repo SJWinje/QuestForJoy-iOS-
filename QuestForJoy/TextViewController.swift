@@ -81,8 +81,12 @@ class TextViewController: UIViewController {
     }
 
     func shareButtonClicked() {
-        
-        let firstActivityItem = getText()
+        // Get the text to share.  Include copyright data on all but last truth since it already contains it.
+        var textToShare = getText()
+        if (row != 7) {
+            textToShare.appendAttributedString(NSAttributedString(string: copyrightData, attributes:bFont))
+        }
+        let firstActivityItem = textToShare
         
         let secondActivityItem : NSURL = NSURL(fileURLWithPath: "http://www.desiringgod.org/")!
         

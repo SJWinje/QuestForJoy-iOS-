@@ -98,9 +98,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Vis-Lp-xh2" firstAttribute="bottom" secondItem="tp3-MZ-udP" secondAttribute="top" id="Bqn-Iy-Oae"/>
-                            <constraint firstItem="Vis-Lp-xh2" firstAttribute="trailing" secondItem="vO4-Pa-BC8" secondAttribute="trailingMargin" id="SSg-0l-ITN"/>
+                            <constraint firstItem="Vis-Lp-xh2" firstAttribute="trailing" secondItem="vO4-Pa-BC8" secondAttribute="trailingMargin" id="Pdp-9z-CLV"/>
                             <constraint firstItem="Vis-Lp-xh2" firstAttribute="top" secondItem="kMz-f4-P1S" secondAttribute="bottom" id="WxJ-ws-ogd"/>
-                            <constraint firstItem="Vis-Lp-xh2" firstAttribute="leading" secondItem="vO4-Pa-BC8" secondAttribute="leadingMargin" id="veQ-Kx-TLF"/>
+                            <constraint firstItem="Vis-Lp-xh2" firstAttribute="leading" secondItem="vO4-Pa-BC8" secondAttribute="leadingMargin" id="jaj-fm-edd"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
