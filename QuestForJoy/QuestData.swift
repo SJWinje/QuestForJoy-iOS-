@@ -8,6 +8,8 @@
 
 import Foundation
 
+let copyrightData = "\n\n\nScripture taken from the Holy Bible, New International Version. Copyright 1973, 1978, 1984 by International Bible Society. Used by permission of International Bible Society. NIV and New International Version are trademarks registered in the United States Patent and Trademark office by International Bible Society.\n\nText by John Piper. 2015 Desiring God Foundation. Website: http://www.desiringgod.org/"
+
 let questData = [
     Quest(heading: "Did you know that God commands us to be glad?\n\n",
         scripture: "\"Delight yourself in the Lord and he will give you the desires of your heart.\" (Psalm 37:4)\n\n",
@@ -39,6 +41,6 @@ let questData = [
     
     Quest(heading: "What should you do?\n\n",
         scripture: "Does this make sense to you?\n\nDo you desire the kind of gladness that comes from being satisfied with all that God is for you in Jesus? If so, then God is at work in your life.\n\n",
-        comments: "Turn from the deceitful promises of sin. Call upon Jesus to save you from the guilt and punishment and bondage. \"All who call upon the name of the Lord will be saved\" (Romans 10:13). Start banking your hope on all that God is for you in Jesus. Break the power of sin's promises by faith in the superior satisfaction of God's promises. Begin reading the Bible to find his precious and very great promises, which can set you free (2 Peter 1:3-4). Find a Bible-believing church and begin to worship and grow together with other people who treasure Christ above all things (Philippians 3:7).\n\nThe best news in the world is that there is no necessary conflict between our happiness and God's holiness. Being satisfied with all that God is for us in Jesus magnifies him as a great Treasure.\n\nYou make known to me the path of life; in your presence there is fullness of joy; at your right hand are pleasures forevermore. (Psalm 16:11)\n\n\nScripture taken from the Holy Bible, New International Version. Copyright 1973, 1978, 1984 by International Bible Society. Used by permission of International Bible Society. NIV and New International Version are trademarks registered in the United States Patent and Trademark office by International Bible Society.\n\nText by John Piper. 2015 Desiring God Foundation. Website: http://www.desiringgod.org/"),
+        comments: "Turn from the deceitful promises of sin. Call upon Jesus to save you from the guilt and punishment and bondage. \"All who call upon the name of the Lord will be saved\" (Romans 10:13). Start banking your hope on all that God is for you in Jesus. Break the power of sin's promises by faith in the superior satisfaction of God's promises. Begin reading the Bible to find his precious and very great promises, which can set you free (2 Peter 1:3-4). Find a Bible-believing church and begin to worship and grow together with other people who treasure Christ above all things (Philippians 3:7).\n\nThe best news in the world is that there is no necessary conflict between our happiness and God's holiness. Being satisfied with all that God is for us in Jesus magnifies him as a great Treasure.\n\nYou make known to me the path of life; in your presence there is fullness of joy; at your right hand are pleasures forevermore. (Psalm 16:11)\(copyrightData)"),
 ]
 
