@@ -93,6 +93,9 @@ class TextViewController: UIViewController {
         let activityViewController : UIActivityViewController = UIActivityViewController(
             activityItems: [firstActivityItem, secondActivityItem], applicationActivities: nil)
         
+        // This is needed to prevent crash on iOS 8 iPads
+        activityViewController.popoverPresentationController?.sourceView = self.textView
+        
         activityViewController.excludedActivityTypes = [
             UIActivityTypeAddToReadingList,
             UIActivityTypeAssignToContact,
