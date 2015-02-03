@@ -25,6 +25,10 @@ class TextViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // Add Share button to Navigation Bar
+        let shareButton: UIBarButtonItem = UIBarButtonItem.init(barButtonSystemItem:.Action, target: self, action: Selector("shareButtonClicked"))        
+        self.navigationItem.rightBarButtonItem = shareButton
+        
 //        self.automaticallyAdjustsScrollViewInsets = false;
         
         // Add observer to detect when Accessibility Dynamic Type size has changed
@@ -76,6 +80,44 @@ class TextViewController: UIViewController {
 
     }
 
+    func shareButtonClicked() {
+        
+        let firstActivityItem = getText()
+        
+        let secondActivityItem : NSURL = NSURL(fileURLWithPath: "http://www.desiringgod.org/")!
+        
+        let activityViewController : UIActivityViewController = UIActivityViewController(
+            activityItems: [firstActivityItem, secondActivityItem], applicationActivities: nil)
+        
+        activityViewController.excludedActivityTypes = [
+            UIActivityTypeAddToReadingList,
+            UIActivityTypeAssignToContact,
+            UIActivityTypePostToFlickr,
+            UIActivityTypePostToTencentWeibo,
+            UIActivityTypePostToVimeo,
+            UIActivityTypePostToWeibo,
+            UIActivityTypePrint,
+            UIActivityTypeSaveToCameraRoll
+        ]
+        /* All activity types
+        UIActivityTypeAddToReadingList,
+        UIActivityTypeAirDrop,
+        UIActivityTypeAssignToContact,
+        UIActivityTypeCopyToPasteboard,
+        UIActivityTypeMail,
+        UIActivityTypeMessage,
+        UIActivityTypePostToFacebook,
+        UIActivityTypePostToFlickr,
+        UIActivityTypePostToTencentWeibo,
+        UIActivityTypePostToTwitter,
+        UIActivityTypePostToVimeo,
+        UIActivityTypePostToWeibo,
+        UIActivityTypePrint,
+        UIActivityTypeSaveToCameraRoll,
+        */
+        self.presentViewController(activityViewController, animated: true, completion: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
