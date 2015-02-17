@@ -16,8 +16,9 @@ class TextViewController: UIViewController {
     let bFont = [NSFontAttributeName:UIFont.preferredFontForTextStyle(UIFontTextStyleBody)]
     let iFont = [NSFontAttributeName:UIFont.italicSystemFontOfSize(UIFont.preferredFontForTextStyle(UIFontTextStyleBody).pointSize)]
     
-    // Variable to hold the row selected from the QuestForJoyTableViewController
-    var row:Int!
+    // Variable to hold the selectedTruth selected from the QuestForJoyTableViewController
+    var selectedTruth:Int!
+    var lang: String = ""
     
     // Outlet to the text view on the storyboard
     @IBOutlet var textView: UITextView!
@@ -29,7 +30,7 @@ class TextViewController: UIViewController {
         let shareButton: UIBarButtonItem = UIBarButtonItem.init(barButtonSystemItem:.Action, target: self, action: Selector("shareButtonClicked"))        
         self.navigationItem.rightBarButtonItem = shareButton
         
-//        self.automaticallyAdjustsScrollViewInsets = false;
+        // self.automaticallyAdjustsScrollViewInsets = false;
         
         // Add observer to detect when Accessibility Dynamic Type size has changed
         NSNotificationCenter.defaultCenter().addObserver(self,
@@ -37,6 +38,11 @@ class TextViewController: UIViewController {
             name: UIContentSizeCategoryDidChangeNotification,
             object: nil)
 
+        // Get saved Setting: languageIndex
+        let savedIndex:Int? = NSUserDefaults.standardUserDefaults().integerForKey("languageIndex")
+        // Determine what language to display
+        lang = languages[savedIndex!]
+        
         // Get the selected text to display
         textView.attributedText = getText()
 
@@ -49,10 +55,7 @@ class TextViewController: UIViewController {
         // This may be what does the trick
         let loc:NSRange = NSRange(location: 0, length: 100)
         textView.scrollRangeToVisible(loc)
-
-        // Create and display the UITextView - this is not necessary
-//        let view = UITextView(frame: CGRect(x: 0, y: 0, width: CGRectGetWidth(self.view.frame), height: CGRectGetHeight(self.view.frame)-0))
-//        self.view.addSubview(textView)
+        
     }
 
     func preferredContentSizeChanged(notification: NSNotification) {
@@ -65,11 +68,11 @@ class TextViewController: UIViewController {
         // Create a string that will be our paragraph of text to be displayed
         var p = NSMutableAttributedString()
         
-        // Create formatted strings
-        let hString = NSAttributedString(string: questData[row!].heading, attributes:hFont)
-        let sString = NSAttributedString(string: questData[row!].scripture, attributes:iFont)
-        let cString = NSAttributedString(string: questData[row!].comments, attributes:bFont)
-        
+        // Create formatted strings for the selected language and truth
+        let hString = NSAttributedString(string: newQuestData[lang]![selectedTruth!].heading, attributes:hFont)
+        let sString = NSAttributedString(string: newQuestData[lang]![selectedTruth!].scripture, attributes:iFont)
+        let cString = NSAttributedString(string: newQuestData[lang]![selectedTruth!].comments, attributes:bFont)
+
         // Add formatted strings to paragraph
         p.appendAttributedString(hString)
         p.appendAttributedString(sString)
@@ -83,8 +86,8 @@ class TextViewController: UIViewController {
     func shareButtonClicked() {
         // Get the text to share.  Include copyright data on all but last truth since it already contains it.
         var textToShare = getText()
-        if (row != 7) {
-            textToShare.appendAttributedString(NSAttributedString(string: copyrightData, attributes:bFont))
+        if (selectedTruth != 7) {
+            textToShare.appendAttributedString(NSAttributedString(string: copyrightData[lang]!, attributes:bFont))
         }
         let firstActivityItem = textToShare
         
@@ -93,7 +96,7 @@ class TextViewController: UIViewController {
         let activityViewController : UIActivityViewController = UIActivityViewController(
             activityItems: [firstActivityItem, secondActivityItem], applicationActivities: nil)
         
-        // This is needed to prevent crash on iOS 8 iPads
+        // This is needed to enable the share button to function properly on iOS 8 iPads
         activityViewController.popoverPresentationController?.sourceView = self.textView
         
         activityViewController.excludedActivityTypes = [
@@ -106,7 +109,7 @@ class TextViewController: UIViewController {
             UIActivityTypePrint,
             UIActivityTypeSaveToCameraRoll
         ]
-        /* All activity types
+        /* All activity types, in case others need to be excluded
         UIActivityTypeAddToReadingList,
         UIActivityTypeAirDrop,
         UIActivityTypeAssignToContact,
