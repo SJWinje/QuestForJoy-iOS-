@@ -68,7 +68,9 @@ class QuestForJoyTableViewController: UITableViewController {
         self.performSegueWithIdentifier("ShowSettingsTable", sender:self)
 
         // Ensure Settings changes take effect
-        settingsChanged = true
+        if (!tryUpdate) {
+            settingsChanged = true
+        }
     }
     
     func checkSettings() {
@@ -85,10 +87,16 @@ class QuestForJoyTableViewController: UITableViewController {
                 NSUserDefaults.standardUserDefaults().synchronize()
             }
             
-            // Determine what language to display
-            lang = languages[savedIndex!]
-            if (lang[0...6] == "English") {
-                lang = "English"
+            // TODO: change to the following
+            if (tryUpdate) {
+                Truths.switchLanguage(languages[savedIndex!])
+            }
+            else {
+                // Determine what language to display
+                lang = languages[savedIndex!]
+                if (lang[0...6] == "English") {
+                    lang = "English"
+                }
             }
             
             // Reset since settings changes were just applied
@@ -120,7 +128,13 @@ class QuestForJoyTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // Return the number of rows in the section.
-        return numberOfTruths
+        if (tryUpdate) {
+            return Truths.numberOf()
+        }
+        else {
+            return numberOfTruths
+        }
+        
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -128,8 +142,14 @@ class QuestForJoyTableViewController: UITableViewController {
             as UITableViewCell
         
         // Configure the cell...
+        var truth:String = ""
+        if (tryUpdate) {
+            truth = Truths.truth(indexPath.row).heading
+        }
+        else {
+            truth = newTruths[lang]![indexPath.row]
+        }
         
-        let truth = newTruths[lang]![indexPath.row]
         cell.textLabel?.text = truth
         
         // Dynamic Type was not applied to each cell of the table unless the following two lines are here

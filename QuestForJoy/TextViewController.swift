@@ -38,10 +38,12 @@ class TextViewController: UIViewController {
             name: UIContentSizeCategoryDidChangeNotification,
             object: nil)
 
-        // Get saved Setting: languageIndex
-        let savedIndex:Int? = NSUserDefaults.standardUserDefaults().integerForKey("languageIndex")
-        // Determine what language to display
-        lang = languages[savedIndex!]
+        if (!tryUpdate) {
+            // Get saved Setting: languageIndex
+            let savedIndex:Int? = NSUserDefaults.standardUserDefaults().integerForKey("languageIndex")
+            // Determine what language to display
+            lang = languages[savedIndex!]
+        }
         
         // Get the selected text to display
         textView.attributedText = getText()
@@ -69,9 +71,19 @@ class TextViewController: UIViewController {
         var p = NSMutableAttributedString()
         
         // Create formatted strings for the selected language and truth
-        let hString = NSAttributedString(string: newQuestData[lang]![selectedTruth!].heading, attributes:hFont)
-        let sString = NSAttributedString(string: newQuestData[lang]![selectedTruth!].scripture, attributes:iFont)
-        let cString = NSAttributedString(string: newQuestData[lang]![selectedTruth!].comments, attributes:bFont)
+        var hString = NSAttributedString()
+        var sString = NSAttributedString()
+        var cString = NSAttributedString()
+        if (tryUpdate) {
+            hString = NSAttributedString(string: Truths.truth(selectedTruth).heading, attributes:hFont)
+            sString = NSAttributedString(string: Truths.truth(selectedTruth).scripture, attributes:iFont)
+            cString = NSAttributedString(string: Truths.truth(selectedTruth).comments, attributes:bFont)
+        }
+        else {
+            hString = NSAttributedString(string: newQuestData[lang]![selectedTruth!].heading, attributes:hFont)
+            sString = NSAttributedString(string: newQuestData[lang]![selectedTruth!].scripture, attributes:iFont)
+            cString = NSAttributedString(string: newQuestData[lang]![selectedTruth!].comments, attributes:bFont)
+        }
 
         // Add formatted strings to paragraph
         p.appendAttributedString(hString)
@@ -85,9 +97,27 @@ class TextViewController: UIViewController {
 
     func shareButtonClicked() {
         // Get the text to share.  Include copyright data on all but last truth since it already contains it.
-        var textToShare = getText()
+        let appURL = "From the \"Quest for Joy\" app: http://appstore.com/QuestForJoy.  Copyright ©2015 Extendant Software Inc.\n\n"
+        var textToShare = NSMutableAttributedString()
+        textToShare.appendAttributedString(NSAttributedString(string: "From the ", attributes:bFont))
+
+        attrString.beginEditing()
+        attrString.addAttribute(NSFontAttributeName, value:UIFont.preferredFontForTextStyle(UIFontTextStyleBody), range:range)
+        attrString.addAttribute(NSLinkAttributeName, value:url, range:range)
+        attrString.addAttribute(NSForegroundColorAttributeName, value:UIColor.blueColor(), range:range)
+        attrString.endEditing()
+        
+        textToShare.appendAttributedString(NSAttributedString(attributedString: attrString))
+        textToShare.appendAttributedString(NSAttributedString(string: " app.  Copyright ©2015 Extendant Software Inc.\n\n", attributes:bFont))
+        textToShare.appendAttributedString(getText())
         if (selectedTruth != 7) {
-            textToShare.appendAttributedString(NSAttributedString(string: copyrightData[lang]!, attributes:bFont))
+            if (tryUpdate) {
+                textToShare.appendAttributedString(NSAttributedString(string: Truths.copyright, attributes:bFont))
+            }
+            else {
+                textToShare.appendAttributedString(NSAttributedString(string: copyrightData[lang]!, attributes:bFont))
+            }
+            
         }
         let firstActivityItem = textToShare
         
