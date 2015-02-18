@@ -97,7 +97,6 @@ class TextViewController: UIViewController {
 
     func shareButtonClicked() {
         // Get the text to share.  Include copyright data on all but last truth since it already contains it.
-        let appURL = "From the \"Quest for Joy\" app: http://appstore.com/QuestForJoy.  Copyright ©2015 Extendant Software Inc.\n\n"
         var textToShare = NSMutableAttributedString()
         textToShare.appendAttributedString(NSAttributedString(string: "From the ", attributes:bFont))
 
@@ -108,7 +107,7 @@ class TextViewController: UIViewController {
         attrString.endEditing()
         
         textToShare.appendAttributedString(NSAttributedString(attributedString: attrString))
-        textToShare.appendAttributedString(NSAttributedString(string: " app.  Copyright ©2015 Extendant Software Inc.\n\n", attributes:bFont))
+        textToShare.appendAttributedString(NSAttributedString(string: " app (\(url)).  Copyright ©2015 Extendant Software Inc.\n\n", attributes:bFont))
         textToShare.appendAttributedString(getText())
         if (selectedTruth != 7) {
             if (tryUpdate) {

@@ -81,7 +81,7 @@ class QuestForJoyTableViewController: UITableViewController {
                 // If index has a value then it is safe to use savedIndex below the else
             } else {
                 // Default to "English-NIV"
-                savedIndex = find(languages, "English-NIV")
+                savedIndex = find(languages, "English-ESV")
                 // Save default Setting: languageIndex
                 NSUserDefaults.standardUserDefaults().setInteger(savedIndex!, forKey: "languageIndex")
                 NSUserDefaults.standardUserDefaults().synchronize()
