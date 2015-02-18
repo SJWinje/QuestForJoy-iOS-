@@ -18,7 +18,6 @@ class TextViewController: UIViewController {
     
     // Variable to hold the selectedTruth selected from the QuestForJoyTableViewController
     var selectedTruth:Int!
-    var lang: String = ""
     
     // Outlet to the text view on the storyboard
     @IBOutlet var textView: UITextView!
@@ -30,29 +29,18 @@ class TextViewController: UIViewController {
         let shareButton: UIBarButtonItem = UIBarButtonItem.init(barButtonSystemItem:.Action, target: self, action: Selector("shareButtonClicked"))        
         self.navigationItem.rightBarButtonItem = shareButton
         
-        // self.automaticallyAdjustsScrollViewInsets = false;
-        
         // Add observer to detect when Accessibility Dynamic Type size has changed
         NSNotificationCenter.defaultCenter().addObserver(self,
             selector: "preferredContentSizeChanged:",
             name: UIContentSizeCategoryDidChangeNotification,
             object: nil)
 
-        if (!tryUpdate) {
-            // Get saved Setting: languageIndex
-            let savedIndex:Int? = NSUserDefaults.standardUserDefaults().integerForKey("languageIndex")
-            // Determine what language to display
-            lang = languages[savedIndex!]
-        }
-        
         // Get the selected text to display
         textView.attributedText = getText()
 
-        // 
         // Cause top of text to be visible
         // This does not do exactly what I want, but it is close.
         // I'd really like to simulate the user tapping the status bar so the top of the text would be visible in all cases
-        //
         textView.setContentOffset(CGPointMake(0,10000), animated: false)
         // This may be what does the trick
         let loc:NSRange = NSRange(location: 0, length: 100)
@@ -71,19 +59,9 @@ class TextViewController: UIViewController {
         var p = NSMutableAttributedString()
         
         // Create formatted strings for the selected language and truth
-        var hString = NSAttributedString()
-        var sString = NSAttributedString()
-        var cString = NSAttributedString()
-        if (tryUpdate) {
-            hString = NSAttributedString(string: Truths.truth(selectedTruth).heading, attributes:hFont)
-            sString = NSAttributedString(string: Truths.truth(selectedTruth).scripture, attributes:iFont)
-            cString = NSAttributedString(string: Truths.truth(selectedTruth).comments, attributes:bFont)
-        }
-        else {
-            hString = NSAttributedString(string: newQuestData[lang]![selectedTruth!].heading, attributes:hFont)
-            sString = NSAttributedString(string: newQuestData[lang]![selectedTruth!].scripture, attributes:iFont)
-            cString = NSAttributedString(string: newQuestData[lang]![selectedTruth!].comments, attributes:bFont)
-        }
+        let hString = NSAttributedString(string: currentQuest.truth(selectedTruth).heading, attributes:hFont)
+        let sString = NSAttributedString(string: currentQuest.truth(selectedTruth).scripture, attributes:iFont)
+        let cString = NSAttributedString(string: currentQuest.truth(selectedTruth).comments, attributes:bFont)
 
         // Add formatted strings to paragraph
         p.appendAttributedString(hString)
@@ -96,28 +74,33 @@ class TextViewController: UIViewController {
     }
 
     func shareButtonClicked() {
-        // Get the text to share.  Include copyright data on all but last truth since it already contains it.
+        let myApp = "Quest for Joy"
+        let qfjURL = "http://appstore.com/QuestForJoy"
+        var attrString = NSMutableAttributedString(string: myApp)
+        // the entire string
+        var range:NSRange = NSMakeRange(0, attrString.length)
+        
+        // Get the text to share
         var textToShare = NSMutableAttributedString()
-        textToShare.appendAttributedString(NSAttributedString(string: "From the ", attributes:bFont))
 
+        // First, get reference to the QuestForJoy app
+        textToShare.appendAttributedString(NSAttributedString(string: "From the ", attributes:bFont))
         attrString.beginEditing()
         attrString.addAttribute(NSFontAttributeName, value:UIFont.preferredFontForTextStyle(UIFontTextStyleBody), range:range)
-        attrString.addAttribute(NSLinkAttributeName, value:url, range:range)
+        attrString.addAttribute(NSLinkAttributeName, value:qfjURL, range:range)
         attrString.addAttribute(NSForegroundColorAttributeName, value:UIColor.blueColor(), range:range)
         attrString.endEditing()
-        
         textToShare.appendAttributedString(NSAttributedString(attributedString: attrString))
-        textToShare.appendAttributedString(NSAttributedString(string: " app (\(url)).  Copyright ©2015 Extendant Software Inc.\n\n", attributes:bFont))
+        textToShare.appendAttributedString(NSAttributedString(string: " app (\(qfjURL)).  Copyright ©2015 Extendant Software Inc.\n\n", attributes:bFont))
+        
+        // Next, get the text of the Truth selected
         textToShare.appendAttributedString(getText())
+        
+        // Finally, include the copyright data on all but last Truth since it already contains it
         if (selectedTruth != 7) {
-            if (tryUpdate) {
-                textToShare.appendAttributedString(NSAttributedString(string: Truths.copyright, attributes:bFont))
-            }
-            else {
-                textToShare.appendAttributedString(NSAttributedString(string: copyrightData[lang]!, attributes:bFont))
-            }
-            
+            textToShare.appendAttributedString(NSAttributedString(string: currentQuest.copyright, attributes:bFont))
         }
+        
         let firstActivityItem = textToShare
         
         let secondActivityItem : NSURL = NSURL(fileURLWithPath: "http://www.desiringgod.org/")!

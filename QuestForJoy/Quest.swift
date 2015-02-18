@@ -9,14 +9,33 @@
 import Foundation
 
 class Quest: NSObject {
-    var heading: String
-    var scripture: String
-    var comments: String
+    var language: String
+    var truths: [Truth]
+    var copyright: String
     
-    init(heading: String, scripture: String, comments: String) {
-        self.heading = heading
-        self.scripture = scripture
-        self.comments = comments
-        super.init()
+    init(language: String) {
+        self.language = language
+        self.truths = truthData[language]!
+        self.copyright = copyrightData[language]!
     }
+    
+    func switchLanguage(language: String) {
+        self.language = language
+        self.truths = truthData[language]!
+        self.copyright = copyrightData[language]!
+    }
+    
+    func truth(number: Int) -> Truth {
+        return self.truths[number]
+    }
+    
+    func numberOfTruths() -> Int {
+        return truths.count
+    }
+    
+    func heading(number: Int) -> String {
+        return truths[number].heading
+    }
+    
 }
+

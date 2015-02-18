@@ -24,8 +24,8 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
         if let index = savedIndex {
             // If index has a value then it is safe to use savedIndex below the else
         } else {
-            // Default to "English-NIV"
-            savedIndex = find(languages, "English-NIV")
+            // Default to "English-ESV"
+            savedIndex = find(languages, "English-ESV")
             // Save default Setting: languageIndex
             NSUserDefaults.standardUserDefaults().setInteger(savedIndex!, forKey: "languageIndex")
             NSUserDefaults.standardUserDefaults().synchronize()
@@ -80,18 +80,16 @@ class SettingsTableViewController: UITableViewController, UITextFieldDelegate {
     
     func pickerView(pickerView: UIPickerView!, didSelectRow row: Int, inComponent component: Int)
     {
+        // After the user made their Language selection this method is called, so switch languages accordingly
+        
         // Save selected Setting: languageIndex
         NSUserDefaults.standardUserDefaults().setInteger(row, forKey: "languageIndex")
         NSUserDefaults.standardUserDefaults().synchronize()
 
-        // TODO: change to the following
-        if (tryUpdate) {
-            Truths.switchLanguage(languages[row])
-        }
+        // Switch the language to be displayed
+        currentQuest.switchLanguage(languages[row])
         
-        // Display the selected language
-        //let lang = languages[row]
-        //println("Selected row \(row): \(lang)")
+        // Update the textField to the selected language
         languageSelected.text = languages[row]
         
         // Show the textField, Hide the pickerView
