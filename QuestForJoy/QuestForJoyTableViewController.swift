@@ -46,7 +46,7 @@ class QuestForJoyTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
 
         // Hide separators
-        tableView.separatorColor = UIColor.whiteColor()
+        tableView.separatorColor = UIColor.lightGrayColor()
         
         // Remove separators from empty table cells
         tableView.tableFooterView = UIView(frame:CGRectZero)
