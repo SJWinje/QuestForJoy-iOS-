@@ -13,6 +13,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="QuestCell" textLabel="bsO-Ad-cMC" rowHeight="44" style="IBUITableViewCellStyleDefault" id="GZG-NT-HG7">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -21,6 +22,7 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Title" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bsO-Ad-cMC">
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" red="0.90265940659999999" green="0.90265940659999999" blue="0.90265940659999999" alpha="1" colorSpace="calibratedRGB"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -38,10 +40,75 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Quest for Joy" id="svP-eU-WNi"/>
+                    <connections>
+                        <segue destination="Ve2-W9-B4R" kind="show" identifier="ShowSettingsTable" id="YDY-jK-NVo"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oAf-Z9-VHK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="901" y="175"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="BeK-VE-skj">
+            <objects>
+                <tableViewController id="Ve2-W9-B4R" customClass="SettingsTableViewController" customModule="QuestForJoy" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="xJl-p1-RMm">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Language" id="D3j-gu-cZy">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="1Nr-AT-r4M">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1Nr-AT-r4M" id="6AI-ht-0Mt">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sib-GG-s7d">
+                                                    <rect key="frame" x="8" y="-59" width="584" height="162"/>
+                                                    <connections>
+                                                        <outlet property="dataSource" destination="Ve2-W9-B4R" id="wNW-fa-bmy"/>
+                                                        <outlet property="delegate" destination="Ve2-W9-B4R" id="J2D-Qy-WNJ"/>
+                                                    </connections>
+                                                </pickerView>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pRi-Rp-a81">
+                                                    <rect key="frame" x="8" y="7" width="584" height="30"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="xJl-p1-RMm" id="alj-RS-nKj"/>
+                                                    </connections>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="sib-GG-s7d" firstAttribute="top" secondItem="6AI-ht-0Mt" secondAttribute="topMargin" constant="-67" id="0AG-pn-wHr"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="sib-GG-s7d" secondAttribute="bottom" constant="-68" id="BDj-JG-9nL"/>
+                                                <constraint firstItem="pRi-Rp-a81" firstAttribute="centerY" secondItem="sib-GG-s7d" secondAttribute="centerY" id="HLS-Kc-jEm"/>
+                                                <constraint firstItem="pRi-Rp-a81" firstAttribute="top" secondItem="6AI-ht-0Mt" secondAttribute="topMargin" constant="-1" id="ljU-uG-83u"/>
+                                                <constraint firstItem="sib-GG-s7d" firstAttribute="leading" secondItem="pRi-Rp-a81" secondAttribute="leading" id="sN5-Gu-3oj"/>
+                                                <constraint firstItem="pRi-Rp-a81" firstAttribute="leading" secondItem="6AI-ht-0Mt" secondAttribute="leadingMargin" id="t3P-WX-2tB"/>
+                                                <constraint firstItem="sib-GG-s7d" firstAttribute="trailing" secondItem="pRi-Rp-a81" secondAttribute="trailing" id="wuX-w2-05P"/>
+                                                <constraint firstItem="pRi-Rp-a81" firstAttribute="trailing" secondItem="6AI-ht-0Mt" secondAttribute="trailingMargin" id="xa5-zd-Jxl"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="Ve2-W9-B4R" id="e6f-r8-5UF"/>
+                            <outlet property="delegate" destination="Ve2-W9-B4R" id="bCp-rk-bWw"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Settings" id="cYh-er-fZn"/>
+                    <connections>
+                        <outlet property="languageSelected" destination="pRi-Rp-a81" id="plQ-NY-Nsv"/>
+                        <outlet property="pView" destination="sib-GG-s7d" id="Zhq-Hh-Fhg"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TxY-9h-neA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="901" y="931"/>
         </scene>
         <!--Text View Controller-->
         <scene sceneID="p2d-7p-XYk">
@@ -57,12 +124,12 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="Vis-Lp-xh2">
                                 <rect key="frame" x="16" y="64" width="568" height="492"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.90265940659999999" green="0.90265940659999999" blue="0.90265940659999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.90265940659999999" green="0.90265940659999999" blue="0.90265940659999999" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Vis-Lp-xh2" firstAttribute="bottom" secondItem="tp3-MZ-udP" secondAttribute="top" id="Bqn-Iy-Oae"/>
                             <constraint firstItem="Vis-Lp-xh2" firstAttribute="trailing" secondItem="vO4-Pa-BC8" secondAttribute="trailingMargin" id="Pdp-9z-CLV"/>

@@ -10,6 +10,8 @@
 		E711F3B21A7934F900B68B29 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E711F3B11A7934F900B68B29 /* TextViewController.swift */; };
 		E711F3B51A7937F400B68B29 /* Quest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E711F3B31A7937F400B68B29 /* Quest.swift */; };
 		E711F3B61A7937F400B68B29 /* QuestData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E711F3B41A7937F400B68B29 /* QuestData.swift */; };
+		E77CC2C81A9543C70093EC4F /* Truth.swift in Sources */ = {isa = PBXBuildFile; fileRef = E77CC2C71A9543C70093EC4F /* Truth.swift */; };
+		E7BE7A091A92826D0022EADC /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BE7A081A92826D0022EADC /* SettingsTableViewController.swift */; };
 		E7F055A31A76A4C100459D21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F055A21A76A4C100459D21 /* AppDelegate.swift */; };
 		E7F055A81A76A4C100459D21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E7F055A61A76A4C100459D21 /* Main.storyboard */; };
 		E7F055AA1A76A4C100459D21 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7F055A91A76A4C100459D21 /* Images.xcassets */; };
@@ -32,6 +34,8 @@
 		E711F3B11A7934F900B68B29 /* TextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 		E711F3B31A7937F400B68B29 /* Quest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Quest.swift; sourceTree = "<group>"; };
 		E711F3B41A7937F400B68B29 /* QuestData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestData.swift; sourceTree = "<group>"; };
+		E77CC2C71A9543C70093EC4F /* Truth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Truth.swift; sourceTree = "<group>"; };
+		E7BE7A081A92826D0022EADC /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		E7F0559D1A76A4C100459D21 /* QuestForJoy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuestForJoy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E7F055A11A76A4C100459D21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E7F055A21A76A4C100459D21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +91,8 @@
 				E7F055A61A76A4C100459D21 /* Main.storyboard */,
 				E7F055C41A76A5EF00459D21 /* QuestForJoyTableViewController.swift */,
 				E711F3B11A7934F900B68B29 /* TextViewController.swift */,
+				E7BE7A081A92826D0022EADC /* SettingsTableViewController.swift */,
+				E77CC2C71A9543C70093EC4F /* Truth.swift */,
 				E711F3B31A7937F400B68B29 /* Quest.swift */,
 				E711F3B41A7937F400B68B29 /* QuestData.swift */,
 				E7F055A91A76A4C100459D21 /* Images.xcassets */,
@@ -224,6 +230,8 @@
 			files = (
 				E711F3B61A7937F400B68B29 /* QuestData.swift in Sources */,
 				E711F3B51A7937F400B68B29 /* Quest.swift in Sources */,
+				E7BE7A091A92826D0022EADC /* SettingsTableViewController.swift in Sources */,
+				E77CC2C81A9543C70093EC4F /* Truth.swift in Sources */,
 				E7F055A31A76A4C100459D21 /* AppDelegate.swift in Sources */,
 				E7F055C51A76A5EF00459D21 /* QuestForJoyTableViewController.swift in Sources */,
 				E711F3B21A7934F900B68B29 /* TextViewController.swift in Sources */,
